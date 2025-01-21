@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="script.js"> -->
+    <script src="https://kit.fontawesome.com/4b358ba009.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- ------------Header Section------------- -->
+    <div id="header">  
+        <div class="container">
+            <nav>
+                <img src="images/logo07.jpg" alt="" class="imgg">
+                <!-- <h1 class="nam"><Span>S</Span>harad</h1> -->
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                     <!-- ------------Side icon------------- -->
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div id="home" class="header-text">
+                <h5>HELLO!</h5>
+                <h1>I am <span>Sharad</span><br> Kumar Mishra</h1>
+                <br>
+                <span id="typing-animation"></span>
+                <script>
+                    // Initialize the typing animation
+                    const typingAnimationElement = document.getElementById('typing-animation');
+                    // Create an array of typing text
+                    const typingTexts = [
+                        ' Engineer !',
+                        ' Programmer !',
+                        ' Developer !'
+                    ];
+                    // Create a function to display the typing animation for a given text
+                    function playTypingAnimation(text) {
+                        // Loop through each character and add it to the element
+                        for (let i = 0; i < text.length; i++) {
+                            setTimeout(() => {
+                                typingAnimationElement.textContent += text[i];
+                            }, i * 200); // Increase the delay to slow down the typing animation
+                        }
+                        // Once the animation is complete, reset the text and start over
+                        setTimeout(() => {
+                            typingAnimationElement.textContent = '';
+                            playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+                        }, text.length * 200);
+                    }
+                    // Start the typing animation loop
+                    playTypingAnimation(typingTexts[0]);
+                </script>
+            </div>
+        </div>
+    </div>
+      <!-- ------------About Section------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <!-- My image  -->
+                    <img id="img1" src="images/photo04.jpeg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <hr id="line1">
+                    <p id="desc1">I am Sharad Kumar Mishra from Umaria Madhya Pradesh.
+                        An Enthusiastic and passionate Software Developer with internship experience and strong
+                        foundation in Java, HTML, CSS, JavaScript, React, Node
+                        and Oracle. Skilled in building full-stack web
+                        applications and delivering user-centric solutions. Adept
+                        at problem-solving, debugging, and collaborating in
+                        team environments. Eager to apply technical expertise
+                        and continuously upgrade skills to contribute effectively
+                        to organizational goals.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <!-- skills section  -->
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Full Stack Web Development (MERN)</span></li>
+                            <!-- <br>Developing Digital Gram Panchayt web app</li> -->
+                            <br>
+                            <li><span>Java (SE)</span></li>
+                            <br>
+                            <li><span>C, C++</span></li>
+                            <br>
+                            <li><span>PHP (Basic)</span></li>
+                            <br>
+                            <li><span>Oracle (21c)</span></li>
+                            <br>
+                            <li><span>Data Structure & Algorithms</span></li>
+                        </ul>
+                    </div>
+                    <!-- experience section  -->
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li>MERN Stack Developr at Unified Mentor <br><span>12/2024 - Current</span></li>
+                            <br>
+                            <li>Web Developer at Teachnook <br><span>09/2022 - 11/2022</span></li>
+                        </ul>
+                    </div>
+                    <!-- education section  -->
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li>Technocrats Institute Of Technology Bhopal [2020 - 2024]<br>Bachelor Of Technology [CSE]
+                                <br><span>GPA - 8.75</span>
+                            </li>
+                            <br>
+                            <li>Higher Secondary School [2019 - 2020]<br>(Katni, Madhya Pradesh)<br><span>Percentage -
+                                    84.20</span></li>
+                            <br>
+                            <li>High School [2017 - 2018]<br>(Katni, Madhya Pradesh)<br><span>Percentage - 90.60</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <div id="services">
+        <div class="container">
+            <h1 class="subtitle1">Services</h1>
+            <hr id="line2">
+            <br>
+            <div class="services-list">
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2 class="tab">Web Development</h2>
+                    <p>I have pretty good knowledge in Full stack web development(MERN) alongwith html, css, javascript
+                        and have internship experience in MERN stack development and also built 3 projects and also
+                        working on one major project of Digital Gram Panchayat web app.</p>
+                    <a href="https://www.linkedin.com/in/sharad-mishra-21a587229">Learn More</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop-simple"></i>
+                    <h2 class="tab">Java Development</h2>
+                    <p>I have got very good command in Java(SE) and specially in oops collection framework file handling
+                        applet and learning advance concepts like servlet jsp and springboot and upgrading my skills.
+                    </p>
+                    <a href="https://www.linkedin.com/in/sharad-mishra-21a587229">Learn More</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2 id="tab">Oracle (sql) Development</h2>
+                    <p>I am very strong in sql concepts from beginner to advance level and practically implemetend all
+                        the queries and also completed 1 month SQL database training successfully.</p>
+                    <a href="https://www.linkedin.com/in/sharad-mishra-21a587229">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- -------------------projects------------------- -->
+    <div id="projects">
+        <div class="container">
+            <h1 class="subtitle1">Projects</h1>
+            <hr id="line3">
+            <br>
+            <div class="services-list">
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>Digital Gram Panchayat Web app</h2>
+                    <p>
+                        Developing a Digital Gram Panchayat Web App with
+                        features like citizen record management, grievance
+                        redressal, resource tracking, and real-time updates.
+                        Ensures efficient governance and streamlined
+                        administrative processes.</p>
+                    <a href="https://github.com/mishra83" target="_blank" rel="noopener noreferrer">Learn More</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop-simple"></i>
+                    <h2>Weather Forecast Web app</h2>
+                    <p>
+                        Build an advanced web application displaying weather
+                        details like temperature, wind speed, and humidity, with
+                        dynamic background images of famous landmarks based
+                        on the searched location.</p>
+                    <a href="https://github.com/mishra83" target="_blank" rel="noopener noreferrer">Learn More</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>Personal Portfolio Website</h2>
+                    <p>Developen an Portfolio page of mine to show all the necesessary details about me and my
+                        professional career skills and experiences i built this web app using html css bootstrap and
+                        javascript functionalities.</p>
+                    <a href="https://github.com/mishra83" target="_blank" rel="noopener noreferrer">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- ------------------Contact section ------------------ -->
+    <div id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="">Contact Me</h1>
+                    <hr id="line4">
+                    <p>
+                        <a id="id1" href="mailto:info@yoursite.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-envelope"></i>mishrasharad479@gmail.com
+                        </a>
+                        <p>
+                            <a id="id1" href="https://www.geeksforgeeks.org/user/mishrasharad479/" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-solid fa-g fa-xs"></i> GeeksForGeeks
+                            </a>
+                        </p>
+                        <p>
+                            <a id="id1" href="https://www.linkedin.com/in/sharad-mishra-21a587229" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-brands fa-linkedin"></i> LinkedIn
+                            </a>
+                        </p>
+                    </p>
+                    <p><a href="tel:+91123456789" target="_blank" rel="noopener noreferrer"> <i
+                                class="fa-solid fa-phone"></i>+91 6267887679</a></p>
+                    <h3 id="fm">Follow Me </h3>
+                    <hr id="line5">
+                    <div class="social-icons">
+                        <a id="" href="https://t.me/Sharadmishra83" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-telegram"></i></a>
+                        <a href="https://github.com/mishra83" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://wa.me/916267887679" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://x.com/SharadM77244234?t=Uz5sUgdvCn5VN6rfhInoAg&s=08" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sharad_mishra83?igsh=ejZxd252cGRieTFp" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100068212426380" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                    <a href="images/Sharad-Kumar-Mishra-Resume01.pdf" download="" class="btn btn2">Download Resume</a>
+                </div>
+                <!-- Contact form section  -->
+                <div class="contact-right">
+                    <h1>Ask me something</h1>
+                    <hr id="line6">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <!-- <input type="email" name="email" placeholder="Your Email" required> -->
+                        <button type="submit" class="btn btn2 btn3">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright secion at bottom -->
+        <div class="copyright">
+            <p>Copyright © <i class="fa-solid fa-heart"></i> Sharad-Mishra | All rights reserved.</p>
+        </div>
+    </div>
+    <!--script for setting the skill sections active with showing underline  -->
+     <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+     <!-- script for header icon in nav section when device size gets decreased then icons will appear and nav list will open when menu icon will be clicked -->
+     <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+            sidemenu.style.right = "0";
+        } function closemenu() {
+            sidemenu.style.right = "-200px";
+        } 
+    </script>
+    <!-- script to attach google sheet and for receiving the inputted data by form  -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxLijBmxNqXn-WPXroiUbp9qVZKLnuG4ADuqmogRvOa3UOxhFT-3jb4tB3zNuxyMwQt/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById("msg");
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            // Display the confirmation message immediately
+            msg.innerHTML = " Submitting...";
+            msg.style.color = "light-blue"         // Optional: Change message color during submission
+            msg.style.display = "block";
+
+            <!-- // Send the data to Google Sheets -->
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    // On successful submission
+                    msg.innerHTML = "Message has been sent successfully!";
+                    msg.style.color = "light-blue"; // Success message color
+
+                    // Reset the form fields
+                    form.reset();
+
+                    // Optionally clear the message after a few seconds
+                    setTimeout(() => {
+                        msg.style.display = "none";
+                    }, 1000); // Clears the message after 3 seconds
+                })
+                .catch(error => {
+                    // On error, display an error message
+                    console.error('Error!', error.message);
+                    msg.innerHTML = "There was an error submitting the form. Please try again.";
+                    msg.style.color = "red"; // Error message color
+                });
+        });
+    </script>
+</body>
+
+</html>
